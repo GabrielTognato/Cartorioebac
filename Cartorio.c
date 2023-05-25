@@ -108,17 +108,16 @@ int deletar()
 	printf("Digite o CPF do usuário a ser deletado:"); //pedindo informações para o usuário
 	scanf("%s",cpf); //% refere-se a string
 	
-	remove(cpf); //apaga informações
-	
-	FILE *file; //cria o arquivo
-	file=fopen(cpf,"r"); //cria o arquivo "r" significa read(ler)
-	
-	
-	if(file ==NULL)  //se condição for igual a null(nulo) faça algo
+	if (remove(cpf) == 0)
     {
-    	printf("\nO usuário não se encontra no sistema!.\n\n"); //mostra texto para o usuário
-    	system("pause"); //pausa na tela atual
-	}
+        printf("\nUsuário deletado com sucesso!\n\n"); // mostrando informações ao usuário
+        system("pause");
+    }
+    else
+    {
+        printf("\nNão foi possível deletar. Usuário não se encontra no sistema\n\n"); // mostrando informações ao usuário
+        system("pause");
+    }
 	
 }
 
@@ -129,7 +128,7 @@ int main()
     int opcao=0; //definindo variaveis
     int x=1;
         
-	for(x=1;x=1;)
+	do
 	{
 		
 		
@@ -169,17 +168,16 @@ int main()
 			return 0;
 			break;	
 			
-			
 			default:
 			printf("Essa opção não está disponivel \n");
 			system("pause");
 			break;	
 		}
-    
+  
         
 	
 	
-	}
+	} while(x==1);
     
     
     
