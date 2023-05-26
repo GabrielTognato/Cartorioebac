@@ -127,30 +127,40 @@ int main()
     
     int opcao=0; //definindo variaveis
     int x=1;
+    char senhadigitada[10]="0";
+    
+    printf("### Cartório da EBAC ###\n\n");
+    printf("Login de Admin! \n\nDigite a sua senha:");
+    scanf("%s", senhadigitada);
+    
+    if (strcmp(senhadigitada, "admin") == 0)  //strcmp significa comparação,
+    {
+    	
+	
         
-	do
-	{
+	   do  //faça algo (inicio do-while)
+	   {
 		
 		
-		system("cls"); //responsavel por limpar a tela
+		 system("cls"); //responsavel por limpar a tela
 
         
     
-	    printf("### Cartório da EBAC ###\n\n"); //inicio do menu
-	    printf("Escolha a opção desejada do menu: \n\n");
-     	printf("\t1 - Registrar nomes \n");
-        printf("\t2 - Consultar nomes \n");
-        printf("\t3 - Deletar nomes \n\n"); 
-		printf("\t4 - Sair do sistema \n"); 
-    	printf("Opção: ");  //fim do menu
+	     printf("### Cartório da EBAC ###\n\n"); //inicio do menu
+	     printf("Escolha a opção desejada do menu: \n\n");
+     	 printf("\t1 - Registrar nomes \n");
+         printf("\t2 - Consultar nomes \n");
+         printf("\t3 - Deletar nomes \n\n"); 
+		 printf("\t4 - Sair do sistema \n"); 
+    	 printf("Opção: ");  //fim do menu
     
-        scanf("%d", &opcao);  //armazenando a escolha do usuário
+         scanf("%d", &opcao);  //armazenando a escolha do usuário
     
-        system("cls"); //responsavel por limpar a tela
+         system("cls"); //responsavel por limpar a tela
         
         
-        switch(opcao)
-        {
+         switch(opcao)
+         {
         	case 1:
             registro(); //chamada de funções
 			break;
@@ -172,16 +182,16 @@ int main()
 			printf("Essa opção não está disponivel \n");
 			system("pause");
 			break;	
-		}
-  
+		  } //fim da seleção
         
-	
-	
-	} while(x==1);
+		} while(x==1); //enquanto isto for verdadeiro (fim do-while)
     
-    
-    
-    
-                                                                    
-
+	}
+    else
+     printf("\nSenha incorreta!");
+     return 0;
+     
+     
+     
+     
 }
